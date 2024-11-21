@@ -8,6 +8,7 @@ CREATE TABLE POKEMON.Jugador(
     ID VARCHAR (10) UNIQUE NOT NULL ,
     P_Deportividad INT NOT NULL DEFAULT 100,
     Nivel INT NOT NULL DEFAULT 1,
+    PC_numero SMALLINT REFERENCES PasedeCombate(Numero),
 
     CONSTRAINT check_p_deportividad CHECK ( P_Deportividad<101 AND P_Deportividad >= 0 ),
     CONSTRAINT check_nivel CHECK ( Nivel>0 AND Nivel<51 )
